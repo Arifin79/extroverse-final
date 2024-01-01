@@ -1,0 +1,139 @@
+.create-account {
+    position: relative;
+    top: 20px;
+  }
+
+
+  .create-account .frame {
+    position: absolute;
+    width: 1220px;
+    height: 700px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    top: 60px;
+    left: 270px;
+    overflow: hidden;
+
+  }
+
+  .create-account .text-wrapper {
+    top: 36px;
+    left: 48px;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+    position: absolute;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .create-account .group {
+    margin-left: 35px;
+    height: 253px;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .create-account .overlap-group {
+    position: relative;
+    width: 235px;
+    height: 311px;
+    margin-left: 25px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0.5px 0.5px 4px 2px #00000040;
+  }
+
+  .create-account .account-wrapper {
+    width: 85px;
+    height: 85px;
+    margin-top: 39px;
+    left: 75px;
+    background-color: #cccccc;
+    border-radius: 42.5px;
+
+  }
+
+  .create-account .div {
+    margin-top: 15px;
+    left: 33px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .create-account .text-wrapper-2 {
+    margin-top: 15px;
+    left: 79px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #c0c0c0;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .create-account .text-wrapper-3 {
+    margin-top: 15px;
+    left: 19px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #c0c0c0;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .create-account .text-wrapper-4 {
+    position: absolute;
+    top: 238px;
+    left: 58px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #c0c0c0;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .create-account .text-wrapper-5 {
+    position: absolute;
+    top: 68px;
+    left: 48px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .create-account .text-wrapper-6 {
+    position: absolute;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    left: 270px;
+  }
+
+  .create-account .overlap {
+    position: relative;
+    width: 254px;
+    height: 1024px;
+    background-color: #000000;
+  }
+
