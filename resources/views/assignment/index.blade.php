@@ -14,13 +14,13 @@
     <div class="overlap-wrapper">
         <div class="row">
             @foreach ($assignment as $product)
-                <div class="overlap" href="{{ route('admin/assignment/create') }}">
+                <div class="overlap">
                     <img class="image-wrapper" src="{{ asset('images/' . $product->image)}}"/>
                     <div class="div">{{ $product->project_name }}</div>
                     <div class="text-wrapper-2">{{ $product->customer_type }}</div>
                     <div class="text-wrapper-3">{{ $product->deadline }}</div>
                     <img class="clock" src="images/clock.png" />
-                    <a href="{{ route('admin/assignment/create') }}" class="btn-show">Detail</a>
+                    <a href="{{ route('assignment/edit', ['id' => $product->id]) }}" method="POST" class="btn-show">Detail</a>
                 </div>
 
             @endforeach

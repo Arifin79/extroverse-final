@@ -52,6 +52,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/assignment/index', [AssignmentController::class, 'index'])->middleware('auth')->name('assignment/index');
     Route::get('/assignment/create', [AssignmentController::class, 'create'])->name('assignment/create');
     Route::post('/assignment/store', [AssignmentController::class, 'store'])->name('assignment/store');
+    Route::post('/assignment/taskStore', [AssignmentController::class, 'taskStore'])->name('assignment/taskStore');
     Route::put('/assignment/update', [AssignmentController::class, 'update'])->name('assignment/update');
     Route::delete('/assignment/{id}', [AssignmentController::class, 'destroy'])->name('assignment/destroy');
     Route::get('/assignment/edit/{id}', [AssignmentController::class, 'edit'])->name('assignment/edit');

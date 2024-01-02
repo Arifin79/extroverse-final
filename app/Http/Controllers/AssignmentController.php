@@ -4,12 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Assignment;
+use App\Models\Task;
+
 
 class AssignmentController extends Controller
 {
     //
     public function index(Request $request)
     {
+        $task = Task::orderby('created_at')->get();
+        $keyword = $request->get('search');
+        $perPage = 5;
+
+        if(!empty($keyword)){
+            $task = Task::where('title', 'LIKE', "%$keyword%")
+                        ->orWhere('name', 'LIKE', "%$keyword%")
+                        ->latest()->paginate($perPage);
+        } else {
+            $task = Task::latest()->paginate($perPage);
+        }
+
         $assignment = Assignment::orderby('created_at')->get();
         $keyword = $request->get('search');
         $perPage = 5;
@@ -22,12 +36,7 @@ class AssignmentController extends Controller
             $assignment = Assignment::latest()->paginate($perPage);
         }
 
-        return view ('assignment/index', ['assignment' => $assignment])->with('i', (request()->input('page', 1)-1) *5);
-    }
-
-    public function create()
-    {
-        return view('assignment/create');
+        return view ('assignment/index', ['assignment' => $assignment, 'task' => $task])->with('i', (request()->input('page', 1)-1) *5);
     }
 
     public function store(Request $request){
@@ -53,6 +62,34 @@ class AssignmentController extends Controller
         $product->save();
         return redirect()->route('assignment/index')->with('success', 'Assignment Added successfully');
 
+    }
+
+    public function taskStore(Request $request){
+
+        $product = new Task;
+
+        $request->validate([
+            'project_name' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2028'
+        ]);
+
+        $file_name = time() . '.' . request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images'), $file_name);
+
+        $product->id = $request->id;
+        $product->name = $request->name;
+        $product->title = $request->title;
+        $product->date = $request->date;
+        $product->image = $file_name;
+
+        $producti->save();
+        return redirect()->route('assignment/edit')->with('success', 'Assignment Added successfully');
+
+    }
+
+    public function create()
+    {
+        return view('assignment/create');
     }
 
     public function edit($id){
