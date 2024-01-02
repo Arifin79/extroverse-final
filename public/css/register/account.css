@@ -18,5 +18,7 @@
       border-radius: 10px;
       left: 270px;
       overflow: hidden;
+      padding-left: 20px;
+      padding-right: 20px;
       top: 20px;
     }

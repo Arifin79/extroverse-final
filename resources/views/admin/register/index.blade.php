@@ -8,7 +8,7 @@
             <section>
                 <div class="titlebar">
                     <h4>Register</h4>
-                    <a href="{{ route('register') }}" class="btn-link">Add Task</a>
+                    <a href="{{ route('register') }}" class="btn-link">{{ __('Register') }}</a>
                     {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
                 </div>
                 @if ($message = Session::get('success'))

@@ -36,7 +36,7 @@
         </div>
         <div class="text-wrapper-2">Phone</div>
       </div>
-      <div class="overlap"><img class="account" src="{{ URL::to('img/profile.jpeg') }}" /></div>
+      <div class="overlap"><img class="account" src="{{ asset('images/' . Auth::user()->image)}}"/></div>
       <div class="overlap-wrapper">
         <div class="div-wrapper"><div class="text-wrapper-4">Upload a picture</div></div>
       </div>

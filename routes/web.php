@@ -78,6 +78,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin.home');
 
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->middleware('auth')->name('admin/dashboard');
+    Route::post('/admin/dashboard/store', [AdminDashboardController::class, 'store'])->name('admin/dashboard/store');
+    Route::post('/admin/dashboard/store', [AdminDashboardController::class, 'storeInfo'])->name('admin/dashboard/store');
 
     Route::get('/admin/profile', [AdminProfileController::class, 'index'])->middleware('auth')->name('admin/profile');
 

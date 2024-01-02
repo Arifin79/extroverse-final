@@ -39,7 +39,7 @@ class AdminTeamController extends Controller
 
         $product->id = $request->id;
         $product->image = $image;
-        $product->name = $request->name;
+        $product->name = $request->file_name;
         $product->job_desc = $request->job_desc;
         $product->email = $request->email;
         $product->phone = $request->phone;

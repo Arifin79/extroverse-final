@@ -1,0 +1,131 @@
+
+  .dasboard .frame {
+    position: absolute;
+    width: 1200px;
+    height: 780px;
+    top: 130px;
+    left: 277px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .dasboard .overlap-group {
+    position: absolute;
+    width: 360px;
+    height: 145px;
+    top: 40px;
+    left: 38px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px #00000040;
+  }
+
+  .dasboard .rectangle {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 7px;
+    height: 145px;
+    background-color: #0066ff;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0px 1px 2px #00000040;
+  }
+
+  .dasboard .text-wrapper {
+    position: absolute;
+    top: 24px;
+    left: 34px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .dasboard .text-wrapper-2 {
+    top: 49px;
+    left: 34px;
+    position: absolute;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .dasboard .overlap {
+    position: absolute;
+    width: 360px;
+    height: 145px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px #00000040;
+    top: 40px;
+    left: 418px;
+  }
+
+  .dasboard .text-wrapper-3 {
+    position: absolute;
+    top: 25px;
+    left: 28px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .dasboard .rectangle-2 {
+    top: 1px;
+    left: 2px;
+    position: absolute;
+    width: 7px;
+    height: 145px;
+    background-color: #0066ff;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0px 1px 2px #00000040;
+  }
+
+  .dasboard .text-wrapper-4 {
+    top: 50px;
+    left: 28px;
+    position: absolute;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .dasboard .overlap-2 {
+    position: absolute;
+    width: 360px;
+    height: 145px;
+    top: 40px;
+    left: 800px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px #00000040;
+  }
+
+  .dasboard .text-wrapper-5 {
+    position: absolute;
+    top: 55px;
+    left: 277px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    margin-top: 25px;
+  }
+

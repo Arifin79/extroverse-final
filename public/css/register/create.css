@@ -432,33 +432,7 @@
   /* ==========================================================================
     Product custom styles
   ========================================================================== */
-  .table-product-head {
-    padding: 0 30px;
-    gap: 10px;
-    display: grid;
-    font-size: 14px;
-    font-weight: 500;
-    border-bottom: 1px solid #e0e0e0;
-    grid-template-columns: 50px 170px 150px 180px 130px 120fr 132px 38px 30px;
-    font-family: var(--font-family);
-  }
-  .table-product-body {
-    padding: 10px 30px !important;
-    gap: 10px;
-    display: grid;
-    align-items: center;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 0.6rem 0;
-    color: #6a727a;
-    background-color: #f1f1f1;
-    grid-template-columns: 50px 170px 150px 180px 130px 120fr 40px 80px 80px;
-    font-family: var(--font-family);
-  }
 
-  .img-product {
-    width: 100px;
-    height: 80px;
-  }
 
 
   /* ==========================================================================

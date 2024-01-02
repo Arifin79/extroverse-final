@@ -8,7 +8,7 @@
     white-space: nowrap;
     position: relative;
     left: 270px;
-    margin-top: 25px;
+    margin-top: 20px;
   }
 
   .frame {
@@ -143,6 +143,23 @@
       top: 250px;
       left: 12px;
     }
+
+    .frame .btn-show {
+        position: absolute;
+        width: 60px;
+        height: 30px;
+        top: 250px;
+        left: 190px;
+        padding-left: 10px;
+        padding-top: 3px;
+        border: 2px solid #e0e0e0;
+        background: #ffffff;
+        color: var(--text-dark);
+        text-decoration: none;
+        border-radius: 7px;
+        cursor: pointer;
+        font-family: var(--font-family);
+      }
 
     .frame .div-wrapper {
       position: absolute;
