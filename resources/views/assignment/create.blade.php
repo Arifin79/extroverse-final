@@ -13,8 +13,8 @@
                     </div>
                     <div class="card">
                        <div>
-                            <label>Name</label>
-                            <input type="text" name="name" value="{{ Auth::user()->name }}">
+                            <label hidden>Name</label>
+                            <input hidden type="text" name="name" value="{{ Auth::user()->name }}">
                             <label>Project Name</label>
                             <input type="text" name="title" >
                             <label>Upload Time</label>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="titlebar">
                         <h1></h1>
-                        <button>Save</button>
+                        <button type="submit">Save</button>
                     </div>
                 </form>
             </section>

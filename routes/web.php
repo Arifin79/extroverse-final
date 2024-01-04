@@ -15,6 +15,8 @@ use App\Http\Controllers\AdminAssignmentController;
 use App\Http\Controllers\AdminInformationController;
 use App\Http\Controllers\AdminTeamController;
 use App\Http\Controllers\AdminRegisterController;
+use App\Http\Controllers\AdminTaskController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +49,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
+    // Route::patch('/admin/profile/{id}', [AdminProfileController::class, 'update']);
+    Route::post('/profile/{user}',[ProfileController::class,'update'])->name('profile.update');
 
     Route::get('/assignment', [AssignmentController::class, 'index'])->middleware('auth')->name('assignment');
     Route::get('/assignment/index', [AssignmentController::class, 'index'])->middleware('auth')->name('assignment/index');
@@ -56,6 +60,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::put('/assignment/update', [AssignmentController::class, 'update'])->name('assignment/update');
     Route::delete('/assignment/{id}', [AssignmentController::class, 'destroy'])->name('assignment/destroy');
     Route::get('/assignment/edit/{id}', [AssignmentController::class, 'edit'])->name('assignment/edit');
+    Route::get('/assignment/edit/{id}', [AssignmentController::class, 'taskIndex'])->name('assignment/edit');
+    Route::delete('/assignment/edit/{id}', [AssignmentController::class, 'destroyer'])->name('assignment/destroyer');
 
     Route::get('/information', [InformationController::class, 'index'])->middleware('auth')->name('information');
     Route::get('/information/index', [InformationController::class, 'index'])->middleware('auth')->name('information/index');
@@ -83,6 +89,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::post('/admin/dashboard/store', [AdminDashboardController::class, 'storeInfo'])->name('admin/dashboard/store');
 
     Route::get('/admin/profile', [AdminProfileController::class, 'index'])->middleware('auth')->name('admin/profile');
+    // Route::patch('/admin/profile/{id}', [AdminProfileController::class, 'update']);
+    Route::post('/admin/profile/{user}',[AdminProfileController::class,'update'])->name('admin.profile.update');
 
     Route::get('/admin/assignment', [AdminAssignmentController::class, 'index'])->middleware('auth')->name('admin/assignment');
     Route::get('/admin/assignment/index', [AdminAssignmentController::class, 'index'])->middleware('auth')->name('admin/assignment/index');
@@ -99,6 +107,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::put('/admin/information/update', [AdminInformationController::class, 'update'])->name('admin/information/update');
     Route::delete('/admin/information/{id}', [AdminInformationController::class, 'destroy'])->name('admin/information/destroy');
     Route::get('/admin/information/edit/{id}', [AdminInformationController::class, 'edit'])->name('admin/information/edit');
+
+    Route::get('/admin/task', [AdminTaskController::class, 'index'])->middleware('auth')->name('admin/task');
+    Route::get('/admin/task/index', [AdminTaskController::class, 'index'])->middleware('auth')->name('admin/task/index');
+    Route::post('/admin/task/store', [AdminTaskController::class, 'store'])->name('admin/task/store');
 
     Route::get('/admin/register', [AdminRegisterController::class, 'index'])->middleware('auth')->name('admin/register');
     Route::get('/admin/register/index', [AdminRegisterController::class, 'index'])->middleware('auth')->name('admin/register/index');

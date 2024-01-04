@@ -23,7 +23,6 @@ class AssignmentController extends Controller
         } else {
             $task = Task::latest()->paginate($perPage);
         }
-
         $assignment = Assignment::orderby('created_at')->get();
         $keyword = $request->get('search');
         $perPage = 5;
@@ -37,6 +36,36 @@ class AssignmentController extends Controller
         }
 
         return view ('assignment/index', ['assignment' => $assignment, 'task' => $task])->with('i', (request()->input('page', 1)-1) *5);
+    }
+
+    public function taskIndex(Request $request, $id)
+    {
+        $assignment = Assignment::find($id);
+        $task = Task::orderby('created_at')->get();
+        $keyword = $request->get('search');
+        $perPage = 5;
+
+        if(!empty($keyword)){
+            $task = Task::where('title', 'LIKE', "%$keyword%")
+                        ->orWhere('name', 'LIKE', "%$keyword%")
+                        ->latest()->paginate($perPage);
+        } else {
+            $task = Task::latest()->paginate($perPage);
+        }
+
+        $assignment = Assignment::orderby('created_at')->get();
+        $keyword = $request->get('search');
+        $perPage = 5;
+
+        if(!empty($keyword)){
+            $assignment = Assignment::where('project_name', 'LIKE', "%$keyword%")
+                        ->orWhere('customer_name', 'LIKE', "%$keyword%")
+                        ->latest()->paginate($perPage);
+        } else {
+            $assignment = Assignment::latest()->paginate($perPage);
+        }
+
+        return view ('assignment/edit', ['assignment' => $assignment, 'task' => $task])->with('i', (request()->input('page', 1)-1) *5);
     }
 
     public function store(Request $request){
@@ -64,32 +93,33 @@ class AssignmentController extends Controller
 
     }
 
+    public function create()
+    {
+        return view('assignment/create');
+    }
+
     public function taskStore(Request $request){
 
         $product = new Task;
+        $producti = new Assignment;
 
-        $request->validate([
-            'project_name' => 'required',
-            'image' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2028'
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'image' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2028'
+        // ]);
 
-        $file_name = time() . '.' . request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('images'), $file_name);
+        $file_name = time() . '.' . $request->image->getClientOriginalExtension();
+        $request->image->move(public_path('images'), $file_name);
 
-        $product->id = $request->id;
+        $producti->id = $request->id;
         $product->name = $request->name;
         $product->title = $request->title;
         $product->date = $request->date;
         $product->image = $file_name;
 
-        $producti->save();
-        return redirect()->route('assignment/edit')->with('success', 'Assignment Added successfully');
+        $product->save();
 
-    }
-
-    public function create()
-    {
-        return view('assignment/create');
+        return redirect()->route('assignment/edit', ['id' => $product->id])->with('success', 'Assignment Added successfully');
     }
 
     public function edit($id){
@@ -134,5 +164,16 @@ class AssignmentController extends Controller
         $assignment->delete();
         return redirect('assignment')->with('success', 'product Deleted!');
     }
+
+    // public function destroyer($id){
+    //     $task = Assignment::findOrFail($id);
+    //     $image_path = public_path(). "/images/";
+    //     $image = $image_path. $assignment->image;
+    //     if(file_exists($image)){
+    //         @unlink($image);
+    //     }
+    //     $task->delete();
+    //     return redirect()->route('assignment/edit', ['id' => $product->id])->with('success', 'Task Deleted!');
+    // }
 
 }

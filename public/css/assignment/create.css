@@ -131,6 +131,7 @@
     position: relative;
     width: 1140px;
     height: 72px;
+    margin-bottom: 20px;
     background-color: #cecece;
     border-radius: 10px;
   }
@@ -167,7 +168,7 @@
     position: absolute;
     width: 125px;
     top: 7px;
-    left: 466px;
+    left: 700px;
     font-family: "Inter-SemiBold", Helvetica;
     font-weight: 600;
     color: #0066ff;
@@ -206,25 +207,12 @@
   .detail-project .text-wrapper-7 {
     position: absolute;
     width: 153px;
-    top: 1px;
-    left: 50px;
+    top: 15px;
+    left: 170px;
     font-family: "Inter-Medium", Helvetica;
     font-weight: 500;
     color: #000000;
     font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-
-  .detail-project .text-wrapper-8 {
-    position: absolute;
-    width: 143px;
-    top: 25px;
-    left: 50px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #777777;
-    font-size: 15px;
     letter-spacing: 0;
     line-height: normal;
   }
@@ -234,7 +222,7 @@
     width: 35px;
     height: 35px;
     top: 18px;
-    left: 1017px;
+    left: 1090px;
   }
 
   .detail-project .line-2 {
@@ -250,7 +238,7 @@
     width: 35px;
     height: 35px;
     top: 18px;
-    left: 964px;
+    left: 1050px;
   }
 
   .detail-project .div-wrapper {

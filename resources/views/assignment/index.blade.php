@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="text-wrapper-6">Tugas</div>
+<div class="text-wrapper-6">Assignment</div>
     <div class="frame">
       <div class="group">
         {{-- <div class="overlap-group">
@@ -26,8 +26,7 @@
             @endforeach
         </div>
     </div>
-
-    <div class="text-wrapper-7">{{ $product->id }} Results</div>
+    <div class="text-wrapper-7">Task</div>
 </div>
 
 @endsection

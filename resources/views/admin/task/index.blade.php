@@ -1,23 +1,11 @@
-@extends('assignment.layout.main')
+@extends('admin.task.layout.main')
 
 @section('content')
-
 
 <div class="detail-project">
     <div class="overlap">
       <div class="frame">
-        <div class="group">
-          {{-- <div class="text-wrapper">{{ $assignment->deadline}}</div> --}}
-          {{-- <img class="clock" src="{{ asset('images/clock.png') }}" /> --}}
-        </div>
-        <div class="div">Send Task</div>
-        {{-- <div class="text-wrapper-2">{{ $assignment->customer_type}}</div> --}}
-        <img class="line" src="img/line-5.svg" />
-        <div class="overlap-group-wrapper">
-          <div class="overlap-group">
-            <a href="{{ route('assignment/create') }}" class="text-wrapper-3">Add Assignment</a>
-          </div>
-        </div>
+        <div class="div">Download Task</div>
       </div>
       <div class="overlap-wrapper">
         <div class="row"></div>
@@ -30,7 +18,7 @@
                     <div class="group-2">
                         <div class="text-wrapper-7">{{ $product->name }}</div>
                     </div>
-                {{-- <a href="{{ route('admin/information/edit', ['id' => $product->id]) }}" class="edit" style="padding-right:12px; padding-left:12px; padding-top:10px; margin-top: 0px; margin-right:15px;">
+                <a href="{{ route('admin/information/edit', ['id' => $product->id]) }}" class="edit" style="padding-right:12px; padding-left:12px; padding-top:10px; margin-top: 0px; margin-right:15px;">
                     <i class="fas fa-pencil-alt" ></i>
                 </a>
                 <form method="post" action="{{ route('assignment/destroyer', ['id' => $product->id]) }}">
@@ -39,11 +27,12 @@
                     <button class="remove" onclick="deleteConfirm(event)" style="background-color: transparent; border: none; padding-right:12px; padding-left:12px; padding-top:10px; margin-top: 0px; margin-right:15px">
                         <i class="far fa-trash-alt"></i>
                     </button>
-                </form> --}}
+                </form>
             </div>
         @endforeach
       </div>
     </div>
-    <div class="text-wrapper-9">Detail Project</div>
+    <div class="text-wrapper-9">File Assignment</div>
 </div>
+
 @endsection
